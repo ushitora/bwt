@@ -7,7 +7,12 @@ class TestBBWT(unittest.TestCase):
         self.assertEqual(bbwt.bijective_bwt('abbababa'), 'abbbaaba')
         self.assertEqual(bbwt.bijective_bwt('abababaaababababa'), 'ababbbabbbaaaaaaa')
 
-
     def test_bijective_bwt_inv(self):
-        # TODO
-        pass
+        texts = [
+            'abraca',
+            'aabbaabb',
+            'kjasdfjbasjkdfkajsbdkfjabsdflajsdfasd',
+            'abaababaabaababaababaabaababaabaababaababaabaababaababaabaababaabaababaababaabaababaabaab',
+        ]
+        for w in texts:
+            self.assertEqual(bbwt.bijective_bwt_inv(bbwt.bijective_bwt(w)), w)

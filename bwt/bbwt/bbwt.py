@@ -15,9 +15,32 @@ def bijective_bwt(w):
     return ''.join([f[0][-1] for f in repfacts])
 
 
-def bijective_bwt_inv(w):
+def bijective_bwt_inv(l):
     """Inverse transform of bijective_bwt()"""
-    raise NotImplementedError()
+    n = len(l)
+    pi = list(range(n))
+    f = ''.join(sorted(l))
+    pi = sorted(pi, key=lambda x: l[x])
+    used = [False for _ in range(n)]
+    start = 0
+    lw = []
+    while True:
+        while start < n and used[start]:
+            start += 1
+        if start == n:
+            break
+        w = ''
+        index = start
+        used[index] = True
+        while True:
+            w += f[index]
+            index = pi[index]
+            used[index] = True
+            if index == start:
+                break
+        lw.append(w)
+    lw.sort(reverse=True)
+    return ''.join(lw)
 
 
 def bijective_bwt_verbose(w):

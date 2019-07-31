@@ -18,7 +18,18 @@ def bwt_inv(l, index):
         l -- Transformed string
         index -- Starting index
     """
-    raise NotImplementedError()
+    n = len(l)
+    pi = list(range(n))
+    f = ''.join(sorted(l))
+    pi = sorted(pi, key=lambda x: l[x])
+    w = ''
+    start = index
+    while True:
+        w += f[index]
+        index = pi[index]
+        if index == start:
+            break
+    return w * (n // len(w))
 
 
 def bwt_verbose(w):
