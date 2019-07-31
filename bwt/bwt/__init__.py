@@ -1,0 +1,3 @@
+from .bwt import (
+    bwt
+)
