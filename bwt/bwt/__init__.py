@@ -1,3 +1,4 @@
 from .bwt import (
-    bwt
+    bwt,
+    bwt_verbose
 )
