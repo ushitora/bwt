@@ -11,3 +11,4 @@ from .bbwt import (
 )
 
 import bwt.encoder as encoder
+import bwt.utils as utils
