@@ -8,8 +8,7 @@ or clone this repository and run `pip install`
 
 ```
 $ git clone git@github.com:ushitora/bwt.git
-$ cd bwt
-$ pip install bwt
+$ pip install -e bwt
 ```
 
 
